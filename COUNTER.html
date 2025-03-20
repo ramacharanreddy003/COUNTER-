@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{ background-color: lightgray; 
+                }
+        .c{
+            font-size: 30px;
+            
+        }
+       
+      .count{ padding-top: 200px;}
+    </style>
+</head>
+<body>
+    <center>
+            <div class="count">
+            <p class="c">Counter: <span id="counter">0</span></p>
+            <button id="dbutton">Decrement</button>
+            <button id="incbutton">Increment</button>
+            <button id="rbutton">Reset</button>
+        </div>
+            <script>
+                    const counter=document.getElementById("counter");
+                    let dbutton=document.getElementById("dbutton");
+                    let incbutton=document.getElementById("incbutton");
+                    let rbutton=document.getElementById("rbutton");
+
+                    let count=0;
+                    dbutton.addEventListener("click",function(){
+                        count--;
+                        counter.innerHTML=count;
+                    })
+        
+                    incbutton.addEventListener("click",function(){
+                        count++;
+                        counter.innerHTML=count;
+                    })
+                   let rcount=0;
+                   rbutton.addEventListener("click",function(){
+                    count=0;
+                    counter.innerHTML=count;
+                   })
+
+
+                   //FOR HOVER of decrement
+                   const hdbutton=document.getElementById("dbutton");
+                   function changecoloroverhover(){
+                    hdbutton.style.backgroundColor="pink";
+                   }
+                   hdbutton.addEventListener("mouseenter",changecoloroverhover);
+
+                   function decrestore(){
+                    hdbutton.style.backgroundColor="white";
+                   }
+                   hdbutton.addEventListener("mouseleave",decrestore);
+
+
+
+                   //for hover of increment
+                   const ihbutton=document.getElementById("incbutton");
+                   function changecoloronhover(){
+                    ihbutton.style.backgroundColor="pink";
+                   }
+                   ihbutton.addEventListener("mouseenter",changecoloronhover);
+
+                   function restore(){
+                    ihbutton.style.backgroundColor="white";
+
+                   }
+                   ihbutton.addEventListener("mouseleave",restore);
+                   //for reset
+                   const resetbutton=document.getElementById("rbutton");
+                   function resetcolor(){
+                    resetbutton.style.backgroundColor="pink";
+                    }
+                    resetbutton.addEventListener("mouseenter",resetcolor);
+
+                    function reset_restore(){
+                        resetbutton.style.backgroundColor="white";
+
+                    }
+                    resetbutton.addEventListener("mouseleave",reset_restore);
+            </script>
+        </center>
+</body>
+</html>
